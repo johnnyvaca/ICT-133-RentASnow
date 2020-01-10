@@ -2,7 +2,7 @@
 ob_start();
 $title = "RentASnow - Accueil";
 ?>
-
+<h1 id="btn">BOUTTON</h1>
 <!-- ________ SLIDER_____________-->
 <div class="row-fluid">
     <div class="camera_full_width">
