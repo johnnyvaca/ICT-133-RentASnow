@@ -10,7 +10,8 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet">
 
     <!-- Icons -->
-    <link href="assets/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="assets/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet"
+          type="text/css"/>
     <link href="assets/icons/social/stylesheets/social_foundicons.css" media="screen" rel="stylesheet" type="text/css"/>
 
     <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css">
@@ -25,17 +26,64 @@
     <link href="http://fonts.googleapis.com/css?family=Pontano+Sans" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet" type="text/css">
 
-    <link href="css/subtlepatterns/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="" rel="stylesheet" type="text/css"/>
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
 </head>
 <body id="pageBody">
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+
+        <div id="divLogo" class="pull-left">
+            <a href="index.php" id="divSiteTitle" class="navbar-brand">Rent A Snow</a><br/>
+            <br/>
+            <a href="index.php" id="divTagLine"  class="navbar-brand">La glisse à moindre coût</a>
+        </div>
+        <a href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php?action=home">Home <span class="sr-only">(current)</span></a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?action=displaySnows">Snowboards<span
+                                class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Autres
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <a class="btn btn-success" href="#" role="button">Login</a>
+
+
+    </div>
+
+
+</nav>
 
 <div id="divBoxed" class="container">
 
-    <div class="transparent-bg" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: -1;zoom: 1;"></div>
+    <div class="transparent-bg"
+         style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: -1;zoom: 1;"></div>
 
     <div class="divPanel notop nobottom">
         <div class="row-fluid">
@@ -43,22 +91,6 @@
                 <div id="divLogo" class="pull-left">
                     <a href="index.php" id="divSiteTitle">Rent A Snow</a><br/>
                     <a href="index.php" id="divTagLine">La glisse à moindre coût</a>
-                </div>
-
-                <div id="divMenuRight" class="pull-right">
-
-                    <div class="navbar">
-                        <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
-                            NAVIGATION <span class="icon-chevron-down icon-white"></span>
-                        </button>
-                        <div class="nav-collapse collapse">
-                            <ul class="nav nav-pills ddmenu">
-                                <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
-                                <li><a href="index.php?action=home">Home</a></li>
-                                <li><a href="index.php?action=displaySnows">Snows</a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -82,7 +114,8 @@
                 <div class="row">
                     <div class="col-4" id="footerArea1">
                         <h3>Notre magasin</h3>
-                        <p>Nous sommes une équipe de jeunes snowboardeurs qui souhaitons faire découvrir cette discipline à tous les publics.</p>
+                        <p>Nous sommes une équipe de jeunes snowboardeurs qui souhaitons faire découvrir cette
+                            discipline à tous les publics.</p>
                         <p>
                             <a href="#" title="Terms of Use">Terms of Use</a><br/>
                             <a href="#" title="Privacy Policy">Privacy Policy</a><br/>
@@ -93,8 +126,10 @@
 
                     <div class="col-4" id="footerArea3">
                         <h3>Horaires de location</h3>
-                        <p>Les locations peuvent s'effectuer tous les jours de la semaine en haute saison de 07h à 19h et en basse saison, les jours ouvrables de 8h à 18h.<br>
-                            Vous pouvez aussi passer par le site. Pour le retrait et le dépot, vous devrez passer au guichet automatique à l'arrière du magasin</p>
+                        <p>Les locations peuvent s'effectuer tous les jours de la semaine en haute saison de 07h à 19h
+                            et en basse saison, les jours ouvrables de 8h à 18h.<br>
+                            Vous pouvez aussi passer par le site. Pour le retrait et le dépot, vous devrez passer au
+                            guichet automatique à l'arrière du magasin</p>
                     </div>
 
                     <div class="col-4" id="footerArea4">
