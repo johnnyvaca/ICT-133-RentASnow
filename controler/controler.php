@@ -1,33 +1,21 @@
 <?php
 require_once 'model/model.php';
-$action = $_GET['action'];
-switch ($action){
-    case "home":
-        fnHome();
-        break;
-    case "login":
-        fnLogin();
-        break;
-    case "snows":
-        fnSnows();
-        break;
-    default:
-        fnHome();
-
-
-
-}
-function fnHome()
+function getHomePage()
 {
     $news = getNews();
     require_once 'view/home.php';
 }
-function fnLogin()
+function getLoginPage()
 {
     require_once 'view/login.php';
 }
-function fnSnows()
+function getSnowsPage()
 {
+    $snows = getSnows();
     require_once 'view/snows.php';
+}
+function getProfilPage()
+{
+    require_once 'view/profil.php';
 }
 ?>
