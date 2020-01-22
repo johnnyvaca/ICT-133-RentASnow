@@ -11,8 +11,6 @@ if ($_POST['email'] == $user && $_POST['password'] == $pass){
 
 
 }else{
-
-    $error = "L'EMAIL OU LE MOT DE PASSE EST ERRONE";
     header('Location: http://localhost:800/index.php?action=login');
     exit();
 }

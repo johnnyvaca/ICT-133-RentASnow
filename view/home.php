@@ -1,6 +1,8 @@
 <?php
 ob_start();
 $title = "RentASnow - Accueil";
+echo $_POST['newEmail'];
+echo $_POST['newPassword'];
 ?>
 <!-- ________ SLIDER_____________-->
 <div class="row-fluid">

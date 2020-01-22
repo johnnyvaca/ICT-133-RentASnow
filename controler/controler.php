@@ -1,5 +1,5 @@
 <?php
-require_once 'model/model.php';
+require 'model/model.php';
 function getHomePage()
 {
     $news = getNews();
@@ -7,6 +7,7 @@ function getHomePage()
 }
 function getLoginPage()
 {
+    $users = getUsers();
     require_once 'view/login.php';
 }
 function getSnowsPage()
@@ -18,4 +19,10 @@ function getProfilPage()
 {
     require_once 'view/profil.php';
 }
+function putUserPage()
+{
+    putUser();
+    require_once 'view/profil.php';
+}
+
 ?>

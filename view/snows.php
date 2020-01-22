@@ -7,8 +7,6 @@ $title = "RentASnow - Login";
 <h1>LISTE DES SNOWBOARDS A LOUER</h1>
 
 <div class="card-group">
-<?php
-    ?>
 
 
             <?php
@@ -23,13 +21,6 @@ $title = "RentASnow - Login";
 
             <?php } ?>
 
-
-
-
-    <?php
-
-
-?>
 <?php
 $content = ob_get_clean();
 require "gabarit.php";
