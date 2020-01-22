@@ -1,7 +1,5 @@
 <?php
 session_start();
-$username = "toto";
-$_SESSION['email'] = $email;
 require "controler/controler.php";
 $action = $_GET['action'];
 switch ($action){

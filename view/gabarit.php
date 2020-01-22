@@ -1,5 +1,8 @@
-﻿<!DOCTYPE HTML>
-<html>
+﻿<?php
+session_start();
+?>
+<!DOCTYPE HTML>
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <title><?= $title; ?></title>
@@ -52,8 +55,16 @@
                         <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
                         <li><a href="index.php?action=home">Home</a></li>
                         <li><a href="index.php?action=snows">Snows</a></li>
-                        <li><a href="index.php?action=login">Login</a></li>
-                        <li class="btn btn-danger">Non Connecté</li>
+                            <?php if(isset($_SESSION['login'])){
+                                // style="pointer-events: none;"?>
+
+                                <a href="index.php?action=login"> <button class="btn btn-danger"   type="button" >se déconnecter</button></a>
+                           <?php }else{ ?>
+                                <span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
+                                    <a href="index.php?action=login"><button class="btn btn-success"  type="button">se connecter</button></a>
+    </span>
+                          <?php  }  ?>
+
                     </ul>
                 </div>
             </div>

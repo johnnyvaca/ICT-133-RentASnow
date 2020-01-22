@@ -13,14 +13,14 @@ $title = "RentASnow - Login";
 
             <?php
     foreach ($snows as $snow) { ?>
-        <img src="view/images/<?= $snow['smallimage'] ?>"  class="card-img-top" alt="PAS D'IMAGE" height="10px" width="40px">
-        <div class="card" id="carte">
+           <img src="view/images/<?= $snow['smallimage'] ?>" alt="..." class="rounded-lg">
+        <!--   <img src=""  class="card-img-top" alt="PAS D'IMAGE" height="10px" width="40px">-->
 
-                <div class="card-body">
                     <h5 class="card-title"><?= $snow['marque'] ?></h5>
+                    <br><br>
                     <p class="card-text"><?= date('d.M.Y', strtotime($snow['dateretour'])) ?></p>
-                </div> </div>
-        <br>
+
+
             <?php } ?>
 
 
@@ -29,7 +29,7 @@ $title = "RentASnow - Login";
     <?php
 
 
-?></div>
+?>
 <?php
 $content = ob_get_clean();
 require "gabarit.php";
