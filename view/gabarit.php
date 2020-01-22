@@ -57,9 +57,10 @@ session_start();
                         <li><a href="index.php?action=snows">Snows</a></li>
                             <?php if(isset($_SESSION['login'])){
                                 // style="pointer-events: none;"?>
-
+                                <li><a href="index.php?action=profil">Ma liste</a></li>
                                 <a href="index.php?action=login"> <button class="btn btn-danger"   type="button" >se déconnecter</button></a>
                            <?php }else{ ?>
+
                                 <span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
                                     <a href="index.php?action=login"><button class="btn btn-success"  type="button">se connecter</button></a>
     </span>
