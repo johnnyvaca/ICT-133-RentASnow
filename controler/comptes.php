@@ -1,16 +1,34 @@
 <?php
 
-$mail = $_POST['newEmail'];
-$pass = $_POST['newPassword'];
+
+$email = $_POST['newEmail'];
+$password = $_POST['newPassword'];
+$hash = password_hash($password, PASSWORD_DEFAULT);
+$file = '../model/dataStorage/Comptes.json';
+$users = json_decode(file_get_contents($file), true);
+$long = count($users);
+$index = 0;
+foreach ($users as $user) {
+    $id = $user['id'];
+    $arr_client[$index] = $user;
+    $index++;
 
 
-$tab = json_decode(file_get_contents("model/dataStorage/comptes.json"), true);
-var_dump($tab);
+    if ($email == $user['email']) {
+        header('Location: http://localhost:800/index.php?action=login');
+        exit();
+    }
+}
 
-//header('Location: http://localhost:800/index.php?action=home');
-//exit();
-//$tab[] = ["id" => 11, "modele" => "Carrel", "marque" => "CPNV", "bigimage" => "B101.jpg", "smallimage" => "B101_small.jpg", "dateretour" => "", "disponible" => true];
-//file_put_contents('Snows.json', json_encode($tab));
+$id++;
+$arr_client[$index] = ['id' => $id, 'email' => $email, 'password' => $hash];
+$json_string = json_encode($arr_client);
+
+file_put_contents($file, $json_string);
+
+
+header('Location: http://localhost:800/index.php?action=home');
+exit();
 
 
 ?>

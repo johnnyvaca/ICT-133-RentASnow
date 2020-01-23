@@ -1,7 +1,7 @@
 <?php
 
 ob_start();
-session_start();
+
 $title = "RentASnow - Login";
 ?>
 
@@ -15,7 +15,7 @@ $title = "RentASnow - Login";
 
 <?php } else { ?>
 
-    <form action="controler/session.php" method="post">
+    <form action="index.php" method="post">
         <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
             <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
