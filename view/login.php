@@ -1,3 +1,4 @@
+
 <?php
 
 ob_start();
@@ -46,16 +47,16 @@ $title = "RentASnow - Login";
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="controler/comptes.php" method="post">
+                    <form action="index.php" method="post">
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">email</label>
-                            <input type="email" name="newEmail" class="form-control" id="exampleInputEmail1"
+                            <input type="email" name="addEmail" class="form-control" id="exampleInputEmail1"
                                    aria-describedby="emailHelp"
                                    placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="message-text" class="col-form-label">Mot de Passe</label>
-                            <input type="password" name="newPassword" class="form-control" id="exampleInputPassword1"
+                            <input type="password" name="addPassword" class="form-control" id="exampleInputPassword1"
                                    placeholder="Mot de passe">
                         </div>
                         <div class="modal-footer">

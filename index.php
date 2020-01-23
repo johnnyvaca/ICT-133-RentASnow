@@ -1,14 +1,23 @@
 <?php
-session_start();
+
 require "controler/controler.php";
+$action = $_GET['action'];
 $password = $_POST['password'];
 $email = $_POST['email'];
-$login = $_SESSION["login"];
+
+
+$addEmail = $_POST['addEmail'];
+$addPassword = $_POST['addPassword'];
 if(isset($email)){
-    session($email,$password,$login);
+ $okey =   controlSession($email,$password);
+ if ($okey == true){
+     $_SESSION["login"] = $email;
+ }
+}
+if(isset($addEmail)){
+    account($addEmail,$addPassword);
 }
 
-$action = $_GET['action'];
 switch ($action){
     case "home":
         getHomePage();

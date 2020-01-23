@@ -1,27 +1,37 @@
 [
   {
     "id": 1,
-    "email": "Xavier.Carrel@cpnv.ch",
-    "password": "pa$$w0rd"
+    "email": "Johnny.VACA-JARAMILLO@cpnv.ch",
+    "password": "$2y$10$fil6uSqjcQLt0kmwlr7VJe5MwZRcsGrvw3ohqZ7QNHDQrkZ7mPPSC"
   },
   {
     "id": 2,
-    "email": "Johnny.VACA-JARAMILLO@cpnv.ch",
-    "password": "$2y$10$YDByuVDPd2nrsk7DQIVnv.crzGCxndgD3XD5Bklk3OMsrxvXpHNle"
+    "email": "yogo-jv@hotmail.com",
+    "password": "$2y$10$l8hnYh5.neCoTMz6S5ldtONhVJUJiIVmKDl5eNTgtana6gSt8V1dy"
   },
   {
     "id": 3,
-    "email": "Altin.zili@cpnv.ch",
-    "password": "$2y$10$vSpkv2PDIetBJcBA4GOydeixKzgXhXMyY.xqbI4x78pR5bmNu57v2"
+    "email": "yogo-jv@hotmail.com",
+    "password": "$2y$10$scUiqWASGIQ.rfVlQ3f8Qux\/t9EpjBgoMLw0L.GavQcJ6SaeH.z4i"
   },
   {
     "id": 4,
-    "email": "Altin.zili2@cpnv.ch",
-    "password": "$2y$10$pCG1P3aYV8hcmItwL4k3I.\/zugkaSp3nA7ZOEEllun2chEzemJ9EK"
+    "email": "johnny.vaca-jaramill@cpnv.ch",
+    "password": "$2y$10$m8.W4t6sKKTewNYrpJGvp.VwkXUYWy9tzfskGqLDKG.5HFUzRi7OO"
   },
   {
     "id": 5,
-    "email": "Altin.zili3@cpnv.ch",
-    "password": "$2y$10$eUuIQEl1XtNwbfB74f9H5uf04esGZvcZoNIWjwc0l\/.LOgMcEH9w6"
+    "email": "test1@hl.com",
+    "password": "$2y$10$oSP3g3Wn7HTureEhwgcKi.bYWcN54NSiIz.HjazyKOuYg76Cyy6NS"
+  },
+  {
+    "id": 6,
+    "email": "test2@hl.com",
+    "password": "$2y$10$ORQtFfLoXT0TNr\/tnn0WB.1SBPiTmgUB\/mljGc9kVJYuYcss1MSjy"
+  },
+  {
+    "id": 7,
+    "email": "test3@hl.com",
+    "password": "$2y$10$84naE8WOUX3f4HcaYAWR3u.eGS1wAdk0jKpbfTC4VT6afSgiVIfpK"
   }
 ]

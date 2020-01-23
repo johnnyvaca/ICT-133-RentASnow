@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "email": "Xavier.Carrel@cpnv.ch",
+    "password": "pa$$w0rd"
+  },
+  {
+    "id": 2,
+    "email": "Johnny.VACA-JARAMILLO@cpnv.ch",
+    "password": "$2y$10$YDByuVDPd2nrsk7DQIVnv.crzGCxndgD3XD5Bklk3OMsrxvXpHNle"
+  },
+  {
+    "id": 3,
+    "email": "Altin.zili@cpnv.ch",
+    "password": "$2y$10$vSpkv2PDIetBJcBA4GOydeixKzgXhXMyY.xqbI4x78pR5bmNu57v2"
+  },
+  {
+    "id": 4,
+    "email": "Altin.zili2@cpnv.ch",
+    "password": "$2y$10$pCG1P3aYV8hcmItwL4k3I.\/zugkaSp3nA7ZOEEllun2chEzemJ9EK"
+  },
+  {
+    "id": 5,
+    "email": "Altin.zili3@cpnv.ch",
+    "password": "$2y$10$eUuIQEl1XtNwbfB74f9H5uf04esGZvcZoNIWjwc0l\/.LOgMcEH9w6"
+  },
+  {
+    "id": 6,
+    "email": "Altin.zili2sadad@cpnv.c10",
+    "password": "$2y$10$5Hls\/5DXW6NXbNmdoxwpiuyzK\/E6uP7w0HYJP85DCUfYbTN4VQaI2"
+  }
+]
