@@ -26,26 +26,21 @@ function getProfilPage()
 function controlSession($email, $password)
 {
     $users = getUsers();
-    $try = 0;
+
     foreach ($users as $user) {
         if (password_verify($password, $user['password'])) {
 
             if ($email == $user['email']) {
                 $_SESSION["login"] = $email;
-
-                require 'view/snows.php';
+                require 'view/home.php';
+                return;
             }
         }
-        $try++;
     }
-    if ($try == count($users)) {
-
-        require 'view/login.php';
-
-    }
+    require 'view/login.php';
 }
 
-function account($email, $password)
+function regiterAccount($email, $password)
 {
     $users = getUsers();
     $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -64,12 +59,11 @@ function account($email, $password)
         }
     }
 
-        $id++;
-        $arr_client[$index] = ['id' => $id, 'email' => $email, 'password' => $hash];
-        $json_string = json_encode($arr_client);
-        file_put_contents($file, $json_string);
-        require "view/profil.php";
-
+    $id++;
+    $arr_client[$index] = ['id' => $id, 'email' => $email, 'password' => $hash];
+    $json_string = json_encode($arr_client);
+    file_put_contents($file, $json_string);
+    require "view/profil.php";
 
 
 }

@@ -1,25 +1,13 @@
 <?php
-session_start();
+
 require "controler/controler.php";
 $action = $_GET['action'];
-$password = $_POST['password'];
-$email = $_POST['email'];
 
 
-$addEmail = $_POST['addEmail'];
-$addPassword = $_POST['addPassword'];
-if(isset($email)){
- $okey =   controlSession($email,$password);
- if ($okey == true){
-     $_SESSION["login"] = $email;
- }
-}
-if(isset($addEmail)){
-    account($addEmail,$addPassword);
-}
-if(isset($_SESSION["login"])){
 
-}
+session_start();
+
+
 switch ($action){
     case "home":
         getHomePage();
@@ -33,6 +21,17 @@ switch ($action){
     case "profil":
         getProfilPage();
         break;
+    case "sessionVerify":
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+        controlSession($email,$password);
+        break;
+    case "registerAccount":
+        $addEmail = $_POST['addEmail'];
+        $addPassword = $_POST['addPassword'];
+        regiterAccount($addEmail,$addPassword);
+        break;
+
     default:
         getHomePage();
 }

@@ -6,31 +6,9 @@ ob_start();
 $title = "RentASnow - Login";
 ?>
 
-<?php if (isset($_SESSION['login'])) {
-    session_destroy();
-    ?>
-<?php } else { ?>
-
-    <form action="index.php?action=sessionVerify" method="post">
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Mot de Passe</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1"
-                   placeholder="Mot de passe">
-        </div>
-        <button type="submit" class="btn btn-primary">Se Connecter</button>
-        <!--    <button class="btn btn-info">Creer votre compte</button> -->
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal"
-                data-whatever="@getbootstrap">Creer un compte
-        </button>
-
-    </form>
-
-
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal"
+            data-whatever="@getbootstrap">Creer un compte
+</button>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -64,11 +42,7 @@ $title = "RentASnow - Login";
             </div>
         </div>
     </div>
-<?php } ?>
-
 <?php
-
-
 $content = ob_get_clean();
 require "gabarit.php";
 ?>
