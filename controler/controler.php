@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require 'model/model.php';
 function getHomePage()
 {
@@ -25,25 +25,24 @@ function getProfilPage()
 
 function controlSession($email, $password)
 {
-    $okey = false;
     $users = getUsers();
     $try = 0;
     foreach ($users as $user) {
         if (password_verify($password, $user['password'])) {
 
             if ($email == $user['email']) {
-                $okey = true;
+                $_SESSION["login"] = $email;
+
                 require 'view/snows.php';
             }
         }
         $try++;
     }
     if ($try == count($users)) {
-        $okey = false;
+
         require 'view/login.php';
 
     }
-    return $okey;
 }
 
 function account($email, $password)

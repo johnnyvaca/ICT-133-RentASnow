@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "controler/controler.php";
 $action = $_GET['action'];
 $password = $_POST['password'];
@@ -17,7 +17,9 @@ if(isset($email)){
 if(isset($addEmail)){
     account($addEmail,$addPassword);
 }
+if(isset($_SESSION["login"])){
 
+}
 switch ($action){
     case "home":
         getHomePage();
