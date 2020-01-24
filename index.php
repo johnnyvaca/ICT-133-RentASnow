@@ -1,11 +1,11 @@
 <?php
-
+session_start();
 require "controler/controler.php";
 $action = $_GET['action'];
 
+var_dump($_SESSION);
 
 
-session_start();
 
 
 switch ($action){
@@ -22,14 +22,19 @@ switch ($action){
         getProfilPage();
         break;
     case "sessionVerify":
-        $password = $_POST['password'];
+
         $email = $_POST['email'];
+        $password = $_POST['password'];
         controlSession($email,$password);
         break;
     case "registerAccount":
+        $addLastname = $_POST['addLastname'];
+        $addFirstname = $_POST['addFirstname'];
+        $addBirthDate = $_POST['addBirthDate'];
         $addEmail = $_POST['addEmail'];
         $addPassword = $_POST['addPassword'];
-        regiterAccount($addEmail,$addPassword);
+
+        regiterAccount($addEmail,$addPassword,$addLastname,$addFirstname,$addBirthDate);
         break;
 
     default:

@@ -15,12 +15,12 @@ var_dump($_SERVER['PHP_SELF']);
 foreach ($snows as $snow) { ?>
 
     <?= htmlspecialchars($_SERVER['PHP_SELF'])?>
-    <form method="post" action="index.php?action=snows">
+    <form method="post" action="index.php?action=snows"></form>
         <input type="hidden" name="id" value="<?php //$snow['id'] ?>">
         <input type="image" src="view/images/<?= $snow['smallimage'] ?>" class="rounded-lg" data-toggle="modal"
                data-target="#exampleModal"
                data-whatever="@getbootstrap" alt="vide" name="submit">
-    </form>
+
 
 
 
@@ -30,14 +30,7 @@ foreach ($snows as $snow) { ?>
     <p class="card-text"><?= date('d.M.Y', strtotime($snow['dateretour'])) ?></p>
 
 
-<?php }
-
-?>
-<!--
-    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal"
-            data-whatever="@getbootstrap">Creer un compte
-    </button>
--->
+<?php } ?>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">

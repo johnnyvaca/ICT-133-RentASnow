@@ -1,47 +1,34 @@
 [
   {
     "id": 1,
-    "email": "Johnny.VACA-JARAMILLO@cpnv.ch",
-    "password": "$2y$10$fil6uSqjcQLt0kmwlr7VJe5MwZRcsGrvw3ohqZ7QNHDQrkZ7mPPSC"
+    "email": "Johnny.vaca-jaramillo@cpnv.ch",
+    "password": "$2y$10$\/kdZRb3LBknq0s9cPCxA2.V\/xt8dMImwEEQr2o3T1q\/gBivyeAANG",
+    "lastName": "Vaca",
+    "firstName": "Johnny",
+    "birthDate": "1999-10-16"
   },
   {
     "id": 2,
-    "email": "yogo-jv@hotmail.com",
-    "password": "$2y$10$l8hnYh5.neCoTMz6S5ldtONhVJUJiIVmKDl5eNTgtana6gSt8V1dy"
+    "email": "paty@hotmail.com",
+    "password": "$2y$10$bwb982FzJLLkVfh1rYnP0u0Qn.DsXhbXYklOp6ONHunW5RW9\/UE5u",
+    "lastName": "Jaramillo",
+    "firstName": "Patricia",
+    "birthDate": "1978-05-26"
   },
   {
     "id": 3,
     "email": "yogo-jv@hotmail.com",
-    "password": "$2y$10$scUiqWASGIQ.rfVlQ3f8Qux\/t9EpjBgoMLw0L.GavQcJ6SaeH.z4i"
+    "password": "$2y$10$GOwfcmWrE80CY9ODrLFoZuXySiW5gf.ZFB7RAS4E0pxL9\/Anto1HK",
+    "lastName": "Vaca",
+    "firstName": "Johnny",
+    "birthDate": "1999-10-16"
   },
   {
     "id": 4,
-    "email": "johnny.vaca-jaramill@cpnv.ch",
-    "password": "$2y$10$m8.W4t6sKKTewNYrpJGvp.VwkXUYWy9tzfskGqLDKG.5HFUzRi7OO"
-  },
-  {
-    "id": 5,
-    "email": "test1@hl.com",
-    "password": "$2y$10$oSP3g3Wn7HTureEhwgcKi.bYWcN54NSiIz.HjazyKOuYg76Cyy6NS"
-  },
-  {
-    "id": 6,
-    "email": "test2@hl.com",
-    "password": "$2y$10$ORQtFfLoXT0TNr\/tnn0WB.1SBPiTmgUB\/mljGc9kVJYuYcss1MSjy"
-  },
-  {
-    "id": 7,
-    "email": "test3@hl.com",
-    "password": "$2y$10$84naE8WOUX3f4HcaYAWR3u.eGS1wAdk0jKpbfTC4VT6afSgiVIfpK"
-  },
-  {
-    "id": 8,
-    "email": "test7@hl.com",
-    "password": "$2y$10$qXDga6ah0.5NQ\/Q2tDYGhescwuQl6YuFcUTEddZle9uFg8CyAzLUm"
-  },
-  {
-    "id": 9,
-    "email": "il@elle.com",
-    "password": "$2y$10$Wet80OXGGrbSRsPkSgvP9.iLsx3r2lZRZam0.f.FoH7q\/G4TcgVfS"
+    "email": "johnny@hotmail.com",
+    "password": "$2y$10$dd4TmNFmwrHZhEc0RdW5wOxhXBqSerFqquq7xGMqW837knm9TyZ3u",
+    "lastName": "Jaramillo",
+    "firstName": "Vaca",
+    "birthDate": "2020-01-09"
   }
 ]

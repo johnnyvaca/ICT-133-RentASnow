@@ -31,7 +31,15 @@ function controlSession($email, $password)
         if (password_verify($password, $user['password'])) {
 
             if ($email == $user['email']) {
-                $_SESSION["login"] = $email;
+
+
+                $_SESSION["id"] = $user['id'];
+                $_SESSION["email"] = $user['email'];
+                $_SESSION["lastName"] = $user['lastName'];
+                $_SESSION["firstName"] = $user['firstName'];
+                $_SESSION["birthDate"] = $user['birthDate'];
+
+
                 require 'view/home.php';
                 return;
             }
@@ -40,7 +48,7 @@ function controlSession($email, $password)
     require 'view/login.php';
 }
 
-function regiterAccount($email, $password)
+function regiterAccount($email, $password,$lastName,$firstName,$birthDate)
 {
     $users = getUsers();
     $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -55,12 +63,15 @@ function regiterAccount($email, $password)
 
 
         if ($email == $user['email']) {
+
             require "view/login.php";
+            return;
         }
     }
 
     $id++;
-    $arr_client[$index] = ['id' => $id, 'email' => $email, 'password' => $hash];
+
+    $arr_client[$index] = ['id' => $id, 'email' => $email, 'password' => $hash, 'lastName' => $lastName, 'firstName' => $firstName, 'birthDate' => $birthDate];
     $json_string = json_encode($arr_client);
     file_put_contents($file, $json_string);
     require "view/profil.php";

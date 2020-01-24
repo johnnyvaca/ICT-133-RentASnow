@@ -1,4 +1,3 @@
-
 <?php
 
 ob_start();
@@ -6,20 +5,22 @@ ob_start();
 $title = "RentASnow - Login";
 ?>
 
-<?php if (isset($_SESSION['login'])) {
+<?php if (isset($_SESSION['email'])) {
     session_destroy();
+    require "index.php";
     ?>
 <?php } else { ?>
 
     <form action="index.php?action=sessionVerify" method="post">
+
         <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <input type="email" name="email" class="form-control" aria-describedby="emailHelp"
                    placeholder="Email">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Mot de Passe</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+            <input type="password" name="password" class="form-control"
                    placeholder="Mot de passe">
         </div>
         <button type="submit" class="btn btn-primary">Se Connecter</button>
@@ -43,6 +44,21 @@ $title = "RentASnow - Login";
                 </div>
                 <div class="modal-body">
                     <form action="index.php?action=registerAccount" method="post">
+                        <div class="form-group">
+                            <label for="nom">Nom</label>
+                            <input type="text" name="addLastname" class="form-control"
+                                   placeholder="Nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="prenom">Prenom</label>
+                            <input type="text" name="addFirstname" class="form-control"
+                                   placeholder="Prenom">
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">date de naissance</label>
+                            <input type="date" name="addBirthDate" class="form-control"
+                                   placeholder="Date de naissance">
+                        </div>
                         <div class="form-group">
                             <label for="recipient-name" class="col-form-label">email</label>
                             <input type="email" name="addEmail" class="form-control" id="exampleInputEmail1"

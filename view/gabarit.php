@@ -52,11 +52,13 @@
                         <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
                         <li><a href="index.php?action=home">Home</a></li>
                         <li><a href="index.php?action=snows">Snows</a></li>
-                            <?php if(isset($_SESSION['login'])){
+                            <?php if(isset($_SESSION['email'])){
+
                                 // style="pointer-events: none;"?>
                                 <li><a href="index.php?action=profil">Ma liste</a></li>
                                 <a href="index.php?action=login"> <button class="btn btn-danger"   type="button" >se déconnecter</button></a>
-                           <?php }else{ ?>
+                                <h1><?=$_SESSION['lastName']?> <?=$_SESSION['firstName']?></h1>
+                           <?php }else{?>
 
                                 <span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
                                     <a href="index.php?action=login"><button class="btn btn-success"  type="button">se connecter</button></a>
