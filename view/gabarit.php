@@ -1,4 +1,5 @@
-﻿<!DOCTYPE HTML>
+﻿<?= var_dump($_SESSION); ?>
+<!DOCTYPE HTML>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
@@ -56,7 +57,8 @@
 
                                 // style="pointer-events: none;"?>
                                 <li><a href="index.php?action=profil">Ma liste</a></li>
-                                <a href="index.php?action=login"> <button class="btn btn-danger"   type="button" >se déconnecter</button></a>
+                                <a href="index.php?action=deconnect"> <button class="btn btn-warning"   type="button" >se déconnecter</button></a>
+                                <a href="index.php?action=deleteAccount"> <button class="btn btn-danger"   type="button" >Supprimer le compte</button></a>
                                 <h1><?=$_SESSION['lastName']?> <?=$_SESSION['firstName']?></h1>
                            <?php }else{?>
 

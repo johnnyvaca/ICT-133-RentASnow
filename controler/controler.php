@@ -48,17 +48,16 @@ function controlSession($email, $password)
     require 'view/login.php';
 }
 
-function regiterAccount($email, $password,$lastName,$firstName,$birthDate)
+function registerAccount($email, $password,$lastName,$firstName,$birthDate)
 {
     $users = getUsers();
     $hash = password_hash($password, PASSWORD_DEFAULT);
-    $file = 'model/dataStorage/Comptes.json';
 
-    $long = count($users);
+
     $index = 0;
     foreach ($users as $user) {
         $id = $user['id'];
-        $arr_client[$index] = $user;
+        $tableau[$index] = $user;
         $index++;
 
 
@@ -68,15 +67,52 @@ function regiterAccount($email, $password,$lastName,$firstName,$birthDate)
             return;
         }
     }
-
     $id++;
 
-    $arr_client[$index] = ['id' => $id, 'email' => $email, 'password' => $hash, 'lastName' => $lastName, 'firstName' => $firstName, 'birthDate' => $birthDate];
-    $json_string = json_encode($arr_client);
-    file_put_contents($file, $json_string);
-    require "view/profil.php";
+
+    putUser($index,$id,$email,$hash,$lastName,$firstName,$birthDate,$tableau);
+
+
+    require "view/home.php";
 
 
 }
+
+function deleteAccount($email){
+    deleteAccountModel($email);
+    require 'view/login.php';
+}
+
+
+function uploadSnow($tmp_name,$name){
+
+    $extention = strchr($name,".");
+    $extentionAllowed = array(".jpg",".JPG",".png",".PNG");
+    $destination = "view/images/".$name;
+
+    if(in_array($extention,$extentionAllowed)){
+        if(move_uploaded_file($tmp_name,$destination)){
+            require "view/home.php";
+            return;
+        }
+
+    }
+}
+function addSnow($model,$marque,$nameBigImage,$nameSmallImage,$dateretour,$disponible){
+    $snows = getSnows();
+    $index = 0;
+
+    foreach ($snows as $snow) {
+        $id = $snow['id'];
+        $tableau[$index] = $snow;
+        $index++;
+    }
+    $id++;
+    putSnow($index,$id,$model,$marque,$nameBigImage,$nameSmallImage,$dateretour,$disponible,$tableau);
+
+
+    require "view/home.php";
+}
+
 
 ?>

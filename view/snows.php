@@ -7,30 +7,10 @@ $title = "RentASnow - Login";
 
     <h1>LISTE DES SNOWBOARDS A LOUER</h1>
 
-    <div class="card-group">
 
-
-<?php
-var_dump($_SERVER['PHP_SELF']);
-foreach ($snows as $snow) { ?>
-
-    <?= htmlspecialchars($_SERVER['PHP_SELF'])?>
-    <form method="post" action="index.php?action=snows"></form>
-        <input type="hidden" name="id" value="<?php //$snow['id'] ?>">
-        <input type="image" src="view/images/<?= $snow['smallimage'] ?>" class="rounded-lg" data-toggle="modal"
-               data-target="#exampleModal"
-               data-whatever="@getbootstrap" alt="vide" name="submit">
-
-
-
-
-
-    <h5 class="card-title"><?= $snow['marque'] ?></h5>
-    <br><br>
-    <p class="card-text"><?= date('d.M.Y', strtotime($snow['dateretour'])) ?></p>
-
-
-<?php } ?>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal"
+            data-whatever="@getbootstrap">Ajouter Snowboard
+    </button>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -43,28 +23,58 @@ foreach ($snows as $snow) { ?>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="index.php?action=registerAccount" method="post">
+                    <form action="index.php?action=addSnow" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">email</label>
-                            <input type="email" name="addEmail" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp"
-                                   placeholder="Email">
+                            <label for="recipient-name" class="col-form-label">bigimage</label>
+                            <input type="file" name="bigimage" class="form-control" placeholder="bigimage">
                         </div>
                         <div class="form-group">
-                            <label for="message-text" class="col-form-label">Mot de Passe</label>
-                            <input type="password" name="addPassword" class="form-control" id="exampleInputPassword1"
-                                   placeholder="Mot de passe">
+                            <label for="recipient-name" class="col-form-label">smallimage</label>
+                            <input type="file" name="smallimage" class="form-control" placeholder="smallimage">
                         </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">modele</label>
+                            <input type="text" name="modele" class="form-control" placeholder="modele">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">marque</label>
+                            <input type="text" name="marque" class="form-control" placeholder="marque">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">dateretour</label>
+                            <input type="date" name="dateretour" class="form-control" placeholder="dateretour">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">disponible</label>
+                            <input type="checkbox" name="disponible" class="form-control" placeholder="disponible">
+                        </div>
+
+
                         <div class="modal-footer">
-                            <!--   <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                            <button type="submit" class="btn btn-primary">Creer</button> -->
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                            <input type="submit" class="btn btn-primary" value="Creer" name="submitSnow"><!--  -->
                         </div>
                     </form>
+
                 </div>
 
             </div>
         </div>
     </div>
+    <div class="card-group">
+
+
+<?php
+
+foreach ($snows as $snow) { ?>
+
+    <input type="hidden" name="id" value="<?php$snow['id']?>">
+    <input type="image" src="view/images/<?=$snow['smallimage']?>" alt="Submit" height="100px">
+    <h5><?= $snow['marque'] ?></h5>
+    <span><?= date('d.M.Y', strtotime($snow['dateretour'])) ?></span>
+
+<?php } ?>
+
 <?php
 
 $content = ob_get_clean();
