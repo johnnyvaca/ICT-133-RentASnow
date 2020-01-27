@@ -1,9 +1,12 @@
 <?php
 session_start();
+
+
+
+
 require "controler/controler.php";
 $action = $_GET['action'];
 
-//var_dump($_FILES);
 
 
 switch ($action) {
@@ -58,16 +61,22 @@ switch ($action) {
 
         break;
     case "deconnect":
-
         deconnect();
         require "view/home.php";
         break;
     case 'deleteAccount':
-        $email = $_POST['email'];
+        $email = $_SESSION['email'];
         deleteAccount($email);
 
         break;
+    case "ActiveDeleteSnow":
+        ActiveDeleteSnow();
+        break;
+    case "deleteSnow":
+        $snowsSelected =  $_POST['snowsSelected'];
 
+        deleteSnow($snowsSelected);
+        break;
 
     default:
         getHomePage();

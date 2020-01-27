@@ -1,20 +1,11 @@
-[
-  {
-    "id": 1,
-    "model": "naturel",
-    "marque": "sel",
-    "bigimage": "Sunflower_from_Silesia2.jpg",
-    "smallimage": "Moon.jpg",
-    "dateretour": "2020-01-25",
-    "disponible": "on"
-  },
-  {
+{
+  "1": {
     "id": 2,
-    "model": "COPIES",
-    "marque": "NULES",
-    "bigimage": "Capture - Copie (2).PNG",
-    "smallimage": "Capture - Copie (3).PNG",
-    "dateretour": "2020-01-25",
+    "model": "",
+    "marque": "",
+    "bigimage": "",
+    "smallimage": "K067_small.jpg",
+    "dateretour": "",
     "disponible": null
   }
-]
+}

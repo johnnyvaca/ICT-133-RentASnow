@@ -11,6 +11,14 @@ $title = "RentASnow - Login";
     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal"
             data-whatever="@getbootstrap">Ajouter Snowboard
     </button>
+
+
+    <form method="post" action="index.php?action=ActiveDeleteSnow">
+        <input type="hidden" name="ActiveDeleteSnow" value="ActiveDeleteSnow">
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+    </form>
+
+
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -65,16 +73,44 @@ $title = "RentASnow - Login";
 
 
 <?php
+if (isset($_POST['ActiveDeleteSnow'])){ ?>
 
-foreach ($snows as $snow) { ?>
+    <h1>SUPPRIMER</h1>
+    <br>
+    <form method="post" action="index.php?action=deleteSnow">
+        <?php
+        foreach ($snows as $snow) { ?>
+            <input type="checkbox" value=<?=$snow['id']?> name="snowsSelected[]">
+            <img src="view/images/<?= $snow['smallimage'] ?>" alt="Submit" height="100px">
+            <h5><?= $snow['marque'] ?></h5>
+            <span><?= date('d.M.Y', strtotime($snow['dateretour'])) ?></span>
 
-    <input type="hidden" name="id" value="<?php$snow['id']?>">
-    <input type="image" src="view/images/<?=$snow['smallimage']?>" alt="Submit" height="100px">
-    <h5><?= $snow['marque'] ?></h5>
-    <span><?= date('d.M.Y', strtotime($snow['dateretour'])) ?></span>
 
-<?php } ?>
+        <?php } ?>
+        <button type="submit">ELIMINER</button>
+    </form>
 
+    <?php
+}else{ ?>
+    <h1>PAS D'ACTIONS</h1>
+    <br>
+    <?php ?>
+
+    <form method="post">
+    <?php
+
+    foreach ($snows as $snow) {
+        ?>
+
+
+        <input type="hidden" name="id" value="<?php $snow['id'] ?>">
+        <input type="image" src="view/images/<?= $snow['smallimage'] ?>" alt="Submit" height="100px">
+
+        <h5><?= $snow['marque'] ?></h5>
+        <span><?= date('d.M.Y', strtotime($snow['dateretour'])) ?></span>
+    <?php }
+} ?>
+    </form>
 <?php
 
 $content = ob_get_clean();

@@ -1,18 +1,1 @@
-[
-  {
-    "id": 1,
-    "email": "patricia@hotmail.com",
-    "password": "$2y$10$d7mwb2KsSG2o2nrL\/LxUQ.azXDEkh.B.Fs.NRJODqlOJMPCWAWvR.",
-    "lastName": "Guevara",
-    "firstName": "Kerly",
-    "birthDate": "1999-10-16"
-  },
-  {
-    "id": 2,
-    "email": "johnny@hotmail.com",
-    "password": "$2y$10$P1v8EyTWjINr4L5Cx\/by4eg3k4mvp8e6jPIrbT0TnvT49qylKEsx.",
-    "lastName": "Vaca",
-    "firstName": "Johnny",
-    "birthDate": "1999-10-16"
-  }
-]
+[]

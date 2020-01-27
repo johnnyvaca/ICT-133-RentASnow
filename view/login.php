@@ -70,8 +70,9 @@ $title = "RentASnow - Login";
                                    placeholder="Mot de passe">
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                             <button type="submit" class="btn btn-primary">Creer</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+
                         </div>
                     </form>
                 </div>

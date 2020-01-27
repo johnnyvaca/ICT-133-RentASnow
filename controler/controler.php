@@ -48,7 +48,7 @@ function controlSession($email, $password)
     require 'view/login.php';
 }
 
-function registerAccount($email, $password,$lastName,$firstName,$birthDate)
+function registerAccount($email, $password, $lastName, $firstName, $birthDate)
 {
     $users = getUsers();
     $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -59,8 +59,6 @@ function registerAccount($email, $password,$lastName,$firstName,$birthDate)
         $id = $user['id'];
         $tableau[$index] = $user;
         $index++;
-
-
         if ($email == $user['email']) {
 
             require "view/login.php";
@@ -68,51 +66,76 @@ function registerAccount($email, $password,$lastName,$firstName,$birthDate)
         }
     }
     $id++;
-
-
-    putUser($index,$id,$email,$hash,$lastName,$firstName,$birthDate,$tableau);
-
-
+    $tableau[$index] = ['id' => $id, 'email' => $email, 'password' => $hash, 'lastName' => $lastName, 'firstName' => $firstName, 'birthDate' => $birthDate];
+    putUser($tableau);
     require "view/home.php";
-
-
 }
 
-function deleteAccount($email){
-    deleteAccountModel($email);
-    require 'view/login.php';
+function deleteAccount($email)
+{
+    $users = getUsers();
+    foreach ($users as $i => $user) {
+        if ($user['email'] == $email) {
+            unset($users[$i]);
+            deleteAccountModel($users);
+            require 'view/home.php';
+            return;
+        }
+    }
 }
 
-
-function uploadSnow($tmp_name,$name){
-
-    $extention = strchr($name,".");
-    $extentionAllowed = array(".jpg",".JPG",".png",".PNG");
-    $destination = "view/images/".$name;
-
-    if(in_array($extention,$extentionAllowed)){
-        if(move_uploaded_file($tmp_name,$destination)){
+function uploadSnow($tmp_name, $name)
+{
+    $extention = strchr($name, ".");
+    $extentionAllowed = array(".jpg", ".JPG", ".png", ".PNG");
+    $destination = "view/images/" . $name;
+    if (in_array($extention, $extentionAllowed)) {
+        if (move_uploaded_file($tmp_name, $destination)) {
             require "view/home.php";
             return;
         }
-
     }
 }
-function addSnow($model,$marque,$nameBigImage,$nameSmallImage,$dateretour,$disponible){
+
+function addSnow($model, $marque, $nameBigImage, $nameSmallImage, $dateretour, $disponible)
+{
     $snows = getSnows();
     $index = 0;
-
     foreach ($snows as $snow) {
         $id = $snow['id'];
         $tableau[$index] = $snow;
         $index++;
     }
     $id++;
-    putSnow($index,$id,$model,$marque,$nameBigImage,$nameSmallImage,$dateretour,$disponible,$tableau);
-
-
-    require "view/home.php";
+    $tableau[$index] = ['id' => $id, 'model' => $model, 'marque' => $marque, 'bigimage' => $nameBigImage, 'smallimage' => $nameSmallImage, 'dateretour' => $dateretour, 'disponible' => $disponible];
+    putSnow($tableau);
+    require "view/snows.php";
 }
 
+function deconnect()
+{
+    unset($_SESSION);
+    session_destroy();
+}
+
+function ActiveDeleteSnow()
+{
+    $snows = getSnows();
+    require "view/snows.php";
+}
+
+function deleteSnow($snowsSelected)
+{
+
+    $snows = getSnows();
+    foreach ($snows as $i => $snow) {
+if(in_array($snow['id'],$snowsSelected)){
+var_dump($snow['id']);
+var_dump($snowsSelected);
+    unset($snows[$i]);
+    deleteSnowModel($snows);
+}
+    }
+}
 
 ?>
