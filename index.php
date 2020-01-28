@@ -2,11 +2,8 @@
 session_start();
 
 
-
-
 require "controler/controler.php";
 $action = $_GET['action'];
-
 
 
 switch ($action) {
@@ -73,9 +70,15 @@ switch ($action) {
         ActiveDeleteSnow();
         break;
     case "deleteSnow":
-        $snowsSelected =  $_POST['snowsSelected'];
 
-        deleteSnow($snowsSelected);
+        if (isset($_POST['snowsSelected'])) {
+            $snowsSelected = $_POST['snowsSelected'];
+            deleteSnow($snowsSelected);
+        }else{
+            require "view/snows.php";
+        }
+
+
         break;
 
     default:

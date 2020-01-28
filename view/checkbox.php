@@ -1,14 +1,11 @@
 <?php
 error_reporting(E_ALL);
-if(!empty($_POST))
-{
+if (!empty($_POST)) {
     echo '<pre>';
-    echo print_r($_POST['choix'],true);
+    echo print_r($_POST['choix'], true);
     echo '</pre><br />
 Faire un autre test : <a href="checkbox.php">Tester à nouveau</a>';
-}
-else
-{
+} else {
     echo '<b>Test de récupération dans le cas de checkbox multiple</b>';
 
     echo '<form method="POST" action="checkbox.php">

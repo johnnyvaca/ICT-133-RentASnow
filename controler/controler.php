@@ -126,15 +126,16 @@ function ActiveDeleteSnow()
 
 function deleteSnow($snowsSelected)
 {
-
     $snows = getSnows();
     foreach ($snows as $i => $snow) {
-if(in_array($snow['id'],$snowsSelected)){
-var_dump($snow['id']);
-var_dump($snowsSelected);
-    unset($snows[$i]);
-    deleteSnowModel($snows);
-}
+        if (in_array($snow['id'], $snowsSelected)) {
+            unset($snows[$i]);
+            deleteSnowModel($snows);
+            require "view/snows.php";
+            return;
+        }else{
+            require "view/snows.php";
+        }
     }
 }
 
