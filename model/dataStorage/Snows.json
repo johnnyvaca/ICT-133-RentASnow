@@ -1,1 +1,11 @@
-[]
+{
+  "1": {
+    "id": 2,
+    "model": "",
+    "marque": "",
+    "bigimage": "",
+    "smallimage": "K067_small.jpg",
+    "dateretour": "",
+    "disponible": null
+  }
+}

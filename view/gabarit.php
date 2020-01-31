@@ -1,4 +1,5 @@
-﻿<!DOCTYPE HTML>
+﻿
+<!DOCTYPE HTML>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
@@ -10,10 +11,8 @@
     <link href="../node_modules/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet">
 
     <!-- Icons -->
-    <link href="../assets/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet"
-          type="text/css"/>
-    <link href="../assets/icons/social/stylesheets/social_foundicons.css" media="screen" rel="stylesheet"
-          type="text/css"/>
+    <link href="../assets/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="../assets/icons/social/stylesheets/social_foundicons.css" media="screen" rel="stylesheet" type="text/css"/>
 
     <link rel="stylesheet" href="../assets/fontawesome/css/font-awesome.min.css">
 
@@ -38,8 +37,7 @@
 
 <div id="divBoxed" class="container">
 
-    <div class="transparent-bg"
-         style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: -1;zoom: 1;"></div>
+    <div class="transparent-bg" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: -1;zoom: 1;"></div>
 
     <div class="divPanel notop nobottom">
         <div class="row-fluid">
@@ -55,24 +53,20 @@
                         <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
                         <li><a href="index.php?action=home">Home</a></li>
                         <li><a href="index.php?action=snows">Snows</a></li>
-                        <?php if (isset($_SESSION['email'])) {
+                            <?php if(isset($_SESSION['email'])){
 
-                            // style="pointer-events: none;"
-                            ?>
-                            <li><a href="index.php?action=profil">Ma liste</a></li>
-                            <a href="index.php?action=deconnect">
-                                <button class="btn btn-warning" type="button">se déconnecter</button>
-                            </a>
-                            <a href="index.php?action=deleteAccount">
-                                <button class="btn btn-danger" type="button">Supprimer le compte</button>
-                            </a>
-                            <h1><?= $_SESSION['lastName'] ?> <?= $_SESSION['firstName'] ?></h1>
-                        <?php } else { ?>
+                                // style="pointer-events: none;"
+                                ?>
+                                <li><a href="index.php?action=profil">Ma liste</a></li>
+                                <a href="index.php?action=deconnect"> <button class="btn btn-warning"   type="button" >se déconnecter</button></a>
+                                <a href="index.php?action=deleteAccount"> <button class="btn btn-danger"   type="button" >Supprimer le compte</button></a>
+                                <h1><?=$_SESSION['lastName']?> <?=$_SESSION['firstName']?></h1>
+                           <?php }else{?>
 
-                            <span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
-                                    <a href="index.php?action=login"><button class="btn btn-success" type="button">se connecter</button></a>
+                                <span class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
+                                    <a href="index.php?action=login"><button class="btn btn-success"  type="button">se connecter</button></a>
     </span>
-                        <?php } ?>
+                          <?php  }  ?>
 
                     </ul>
                 </div>
@@ -97,8 +91,7 @@
                 <div class="row">
                     <div class="col-4" id="footerArea1">
                         <h3>Notre magasin</h3>
-                        <p>Nous sommes une équipe de jeunes snowboardeurs qui souhaitons faire découvrir cette
-                            discipline à tous les publics.</p>
+                        <p>Nous sommes une équipe de jeunes snowboardeurs qui souhaitons faire découvrir cette discipline à tous les publics.</p>
                         <p>
                             <a href="#" title="Terms of Use">Terms of Use</a><br/>
                             <a href="#" title="Privacy Policy">Privacy Policy</a><br/>
@@ -109,10 +102,8 @@
 
                     <div class="col-4" id="footerArea3">
                         <h3>Horaires de location</h3>
-                        <p>Les locations peuvent s'effectuer tous les jours de la semaine en haute saison de 07h à 19h
-                            et en basse saison, les jours ouvrables de 8h à 18h.<br>
-                            Vous pouvez aussi passer par le site. Pour le retrait et le dépot, vous devrez passer au
-                            guichet automatique à l'arrière du magasin</p>
+                        <p>Les locations peuvent s'effectuer tous les jours de la semaine en haute saison de 07h à 19h et en basse saison, les jours ouvrables de 8h à 18h.<br>
+                            Vous pouvez aussi passer par le site. Pour le retrait et le dépot, vous devrez passer au guichet automatique à l'arrière du magasin</p>
                     </div>
 
                     <div class="col-4" id="footerArea4">

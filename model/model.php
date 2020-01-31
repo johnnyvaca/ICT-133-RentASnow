@@ -32,13 +32,13 @@ function putSnow($tableau)
 
 function deleteAccountModel($users)
 {
-    file_put_contents("model/dataStorage/Comptes.json", json_encode($users));
+   file_put_contents("model/dataStorage/Comptes.json", json_encode($users));
 }
-
 function deleteSnowModel($snows)
 {
     file_put_contents("model/dataStorage/Snows.json", json_encode($snows));
 }
+
 
 
 ?>

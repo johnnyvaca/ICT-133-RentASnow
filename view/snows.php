@@ -59,9 +59,8 @@ $title = "RentASnow - Login";
 
 
                         <div class="modal-footer">
-                            <input type="submit" class="btn btn-primary" value="Creer" name="submitSnow">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-
+                            <input type="submit" class="btn btn-primary" value="Creer" name="submitSnow"><!--  -->
                         </div>
                     </form>
 
@@ -81,7 +80,7 @@ if (isset($_POST['ActiveDeleteSnow'])){ ?>
     <form method="post" action="index.php?action=deleteSnow">
         <?php
         foreach ($snows as $snow) { ?>
-            <input type="checkbox" value=<?= $snow['id'] ?> name="snowsSelected[]">
+            <input type="checkbox" value=<?=$snow['id']?> name="snowsSelected[]">
             <img src="view/images/<?= $snow['smallimage'] ?>" alt="Submit" height="100px">
             <h5><?= $snow['marque'] ?></h5>
             <span><?= date('d.M.Y', strtotime($snow['dateretour'])) ?></span>
