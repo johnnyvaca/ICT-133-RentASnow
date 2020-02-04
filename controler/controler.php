@@ -124,6 +124,11 @@ function ActiveDeleteSnow()
     require "view/snows.php";
 }
 
+function ActiveModifSnow()
+{
+    $snows = getSnows();
+    require "view/modif.php";
+}
 function deleteSnow($snowsSelected)
 {
 

@@ -72,6 +72,9 @@ switch ($action) {
     case "ActiveDeleteSnow":
         ActiveDeleteSnow();
         break;
+    case "ActiveModifSnow":
+        ActiveModifSnow();
+        break;
     case "deleteSnow":
         $snowsSelected =  $_POST['snowsSelected'];
 

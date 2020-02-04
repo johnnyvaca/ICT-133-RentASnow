@@ -17,7 +17,10 @@ $title = "RentASnow - Login";
         <input type="hidden" name="ActiveDeleteSnow" value="ActiveDeleteSnow">
         <button type="submit" class="btn btn-danger">Supprimer</button>
     </form>
-
+    <form method="post" action="index.php?action=ActiveModifSnow">
+        <input type="hidden" name="ActiveModifSnow" value="ActiveModifSnow">
+        <button type="submit" class="btn btn-danger">Modifier</button>
+    </form>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
